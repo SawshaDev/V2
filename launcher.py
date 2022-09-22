@@ -2,6 +2,8 @@ import asyncio
 import aiohttp
 from bot import Aswo
 import os
+import config
+
 
 async def main():
     async with aiohttp.ClientSession() as session:
@@ -13,7 +15,7 @@ async def main():
         ]
         for ext in exts:
             bot.add_extension(ext)
-        await bot.start("", banner=True)
+        await bot.start(config.TOKEN, banner=True)
 
 
 asyncio.run(main())
